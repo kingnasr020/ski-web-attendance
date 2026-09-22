@@ -1,0 +1,8 @@
+[20-Sep-2026 17:24:00 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/skiindon/public_html/database/seeders/DatabaseSeeder.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/skiindon/public_html/database/seeders/DatabaseSeeder.php on line 9
+[20-Sep-2026 17:29:38 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/skiindon/public_html/database/seeders/DatabaseSeeder.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/skiindon/public_html/database/seeders/DatabaseSeeder.php on line 9

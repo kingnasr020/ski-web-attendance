@@ -1,0 +1,4 @@
+[20-Sep-2026 17:24:04 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Auth\User" not found in /home/skiindon/public_html/app/Models/User.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/skiindon/public_html/app/Models/User.php on line 10
