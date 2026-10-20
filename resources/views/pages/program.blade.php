@@ -54,20 +54,40 @@
         color: #ffffff;
     }
 
+    /* BINGKAI GAMBAR BNSP.PNG & KEMNAKER.JPG */
     .hero-glass-frame {
         background: rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 28px;
-        padding: 1rem;
+        padding: 1.15rem;
         box-shadow: 0 24px 48px rgba(0, 0, 0, 0.25);
     }
 
-    .hero-glass-frame img {
-        width: 100%;
-        height: 280px;
-        object-fit: cover;
+    .hero-img-stage {
+        background: #ffffff;
         border-radius: 20px;
+        height: 270px;
+        padding: 1.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        box-shadow: inset 0 2px 10px rgba(15, 23, 42, 0.04);
+    }
+
+    .hero-img-stage img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        transition: transform 0.35s ease;
+    }
+
+    .hero-glass-frame:hover .hero-img-stage img {
+        transform: scale(1.04);
     }
 
     /* 2. BENTO CARDS */
@@ -203,6 +223,11 @@
     }
 </style>
 
+@php
+    $isKemnaker = str_contains(strtolower($title), 'kemnaker');
+    $programLogo = $isKemnaker ? asset('images/kemnaker.jpg') : asset('images/bnsp.png');
+@endphp
+
 <div class="ski-program-wrap pb-5">
 
     {{-- 1. HERO HEADER --}}
@@ -234,14 +259,18 @@
                     </div>
                 </div>
 
+                {{-- KANAN: MENAMPILKAN GAMBAR MANUAL (bnsp.png / kemnaker.jpg) --}}
                 <div class="col-lg-5">
                     <div class="hero-glass-frame">
-                        <img src="{{ $image }}" 
-                             onerror="this.onerror=null;this.src='{{ asset('images/foto skema/k3umum.png') }}';" 
-                             alt="{{ $title }}">
+                        <div class="hero-img-stage">
+                            <img src="{{ $programLogo }}" 
+                                 onerror="this.onerror=null;this.src='{{ asset('images/logo.png') }}';" 
+                                 alt="{{ $title }}">
+                        </div>
+
                         <div class="d-flex justify-content-between align-items-center pt-3 px-2 text-white">
                             <div>
-                                <span class="small opacity-75 d-block">Standar Kurikulum</span>
+                                <span class="small opacity-75 d-block" style="font-size: 0.75rem;">Standar Kurikulum</span>
                                 <span class="fw-bold small">SKKNI & Regulasi Nasional</span>
                             </div>
                             <span class="badge rounded-pill px-3 py-2 fw-bold" style="background: #0066cc;">
@@ -285,7 +314,7 @@
                         <div class="col-md-4">
                             <div class="prog-feature-mini">
                                 <div class="prog-icon-box" style="background: #dcfce7; color: #16a34a;">
-                                    <i class="bi bi-person-Vcard-fill"></i>
+                                    <i class="bi bi-person-vcard-fill"></i>
                                 </div>
                                 <h6 class="fw-bold text-dark mb-1">Asesor & Praktisi</h6>
                                 <p class="small text-secondary mb-0">Dibimbing langsung oleh instruktur senior dan asesor kompetensi berlisensi resmi.</p>

@@ -380,6 +380,17 @@
         border: 1px solid rgba(255, 255, 255, 0.18);
         border-radius: 18px;
         padding: 1rem 1.25rem;
+        height: 100%;
+    }
+
+    .webinar-speaker-strip {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(217, 249, 157, 0.35);
+        border-radius: 18px;
+        padding: 0.9rem 1.25rem;
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
     }
 
     .btn-lime-accent {
@@ -387,7 +398,7 @@
         color: #0a192f !important;
         font-weight: 800;
         border-radius: 999px;
-        padding: 0.9rem 1.8rem;
+        padding: 0.95rem 2rem;
         border: none;
         transition: all 0.25s ease;
     }
@@ -782,7 +793,7 @@
 
                         <div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-2 pt-2">
                             <div>
-                                <h5 class="fw-bold text-dark mb-1">Dr. Nct Dimas Julian Zahid A</h5>
+                                <h5 class="fw-bold text-dark mb-1">Dr(c) Nct. Dimas J. Zahid A., M.K.M.</h5>
                                 <div class="text-muted small">AMK, S.Kep, MKM, CPRM, CWCCA, Grad. IOSH</div>
                             </div>
                             <div class="align-self-start align-self-sm-center">
@@ -797,62 +808,83 @@
         </div>
     </section>
 
-    {{-- 4. SEKSI WEBINAR TERBARU --}}
+    {{-- 4. SEKSI WEBINAR TERBARU (DIPERBARUI & DIRAPIKAN TANPA TOMBOL ABSENSI) --}}
     <section class="py-5">
         <div class="container">
             <div class="webinar-showcase p-4 p-lg-5">
                 <div class="row align-items-center g-4 g-lg-5">
+                    {{-- Poster Webinar --}}
                     <div class="col-lg-5 text-center">
-                        <div class="p-2 rounded-4 d-inline-block" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);">
-                            <img src="{{ asset('images/webinar/poster-safety-leadership.jpeg') }}" 
+                        <div class="p-2 rounded-4 d-inline-block" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 18px 40px rgba(0,0,0,0.25);">
+                            <img src="{{ asset('images/webinar/Webinar-ketinggian.png') }}" 
                                  class="img-fluid rounded-3" 
-                                 alt="Poster Webinar Safety Leadership"
-                                 style="max-height: 400px; width: auto; object-fit: contain;">
+                                 alt="Poster Free Webinar Nasional K3 - Ir. Irwan Agus Setiawan"
+                                 style="max-height: 430px; width: auto; object-fit: contain;">
                         </div>
                     </div>
 
+                    {{-- Informasi & Pendaftaran Webinar --}}
                     <div class="col-lg-7">
-                        <div class="d-inline-flex align-items-center gap-2 mb-3">
-                            <span class="badge bg-danger rounded-pill px-3 py-2 fw-bold">FREE WEBINAR</span>
+                        <div class="d-inline-flex align-items-center flex-wrap gap-2 mb-3">
+                            <span class="badge bg-danger rounded-pill px-3 py-2 fw-bold">
+                                <i class="bi bi-broadcast me-1"></i> FREE WEBINAR NASIONAL K3
+                            </span>
                             <span class="badge rounded-pill px-3 py-2 fw-semibold" style="background: rgba(255,255,255,0.15); color: #fff;">
                                 Terbuka untuk Umum & Praktisi
                             </span>
                         </div>
 
-                        <h2 class="fw-bold text-white mb-3" style="font-size: clamp(1.6rem, 2.8vw, 2.4rem);">
-                            Webinar Nasional: <span class="font-serif-italic" style="color: #d9f99d; font-size: 1.1em;">Safety Leadership</span>
+                        <h2 class="fw-bold text-white mb-3" style="font-size: clamp(1.55rem, 2.7vw, 2.25rem); line-height: 1.28;">
+                            Webinar Nasional: <span class="font-serif-italic" style="color: #d9f99d; font-size: 1.08em;">“Beyond the Height: Membangun Budaya K3 untuk Bekerja di Ketinggian yang Aman dan Profesional”</span>
                         </h2>
 
-                        <p class="text-white opacity-80 mb-4" style="line-height: 1.7; font-size: 0.98rem;">
-                            <strong>Pemimpin Sebagai Kunci Budaya K3 Indonesia.</strong> Pahami peran strategis kepemimpinan dalam membangun budaya keselamatan kerja yang kuat langsung dari praktisi ahli.
-                        </p>
+                        {{-- Highlight Narasumber --}}
+                        <div class="webinar-speaker-strip mb-4">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 46px; height: 46px; background: #d9f99d; color: #0a192f;">
+                                <i class="bi bi-mic-fill fs-5"></i>
+                            </div>
+                            <div>
+                                <div class="small text-uppercase fw-bold" style="color: #d9f99d; font-size: 0.72rem; letter-spacing: 0.06em;">Narasumber Utama</div>
+                                <div class="fw-bold text-white fs-6">Ir. Irwan Agus Setiawan</div>
+                                <div class="small text-white opacity-75" style="font-size: 0.8rem;">Praktisi & Ahli K3 Spesialis Bekerja di Ketinggian</div>
+                            </div>
+                        </div>
 
+                        {{-- Jadwal & Waktu Multi-Zona --}}
                         <div class="row g-3 mb-4">
                             <div class="col-sm-6">
                                 <div class="webinar-meta-box">
-                                    <div class="small text-white opacity-75 text-uppercase fw-semibold mb-1">Tanggal Pelaksanaan</div>
+                                    <div class="small text-white opacity-75 text-uppercase fw-semibold mb-1" style="font-size: 0.74rem;">Hari & Tanggal Pelaksanaan</div>
                                     <div class="fw-bold fs-6 text-white">
-                                        <i class="bi bi-calendar-event me-2" style="color: #d9f99d;"></i>Rabu, 29 April 2026
+                                        <i class="bi bi-calendar-event me-2" style="color: #d9f99d;"></i>Minggu, 25 Oktober 2026
+                                    </div>
+                                    <div class="small text-white opacity-75 mt-1" style="font-size: 0.78rem;">
+                                        Live via Zoom Meeting
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="webinar-meta-box">
-                                    <div class="small text-white opacity-75 text-uppercase fw-semibold mb-1">Waktu & Media</div>
+                                    <div class="small text-white opacity-75 text-uppercase fw-semibold mb-1" style="font-size: 0.74rem;">Waktu Pelaksanaan</div>
                                     <div class="fw-bold fs-6 text-white">
-                                        <i class="bi bi-clock me-2" style="color: #d9f99d;"></i>20.00 WIB • Zoom Meeting
+                                        <i class="bi bi-clock me-2" style="color: #d9f99d;"></i>10.00 WIB <span class="fw-normal opacity-75">(Indonesia)</span>
+                                    </div>
+                                    <div class="small text-white opacity-75 mt-1" style="font-size: 0.78rem;">
+                                        <i class="bi bi-globe2 me-1 text-info"></i>07.00 Pagi Waktu Abu Dhabi
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="d-flex flex-column flex-sm-row gap-3">
-                            <a href="https://forms.gle/NkmYkiTCrSW6xnyh8" target="_blank" class="btn-lime-accent text-decoration-none text-center">
-                                <i class="bi bi-pencil-square me-2"></i>Daftar Sekarang (Gratis)
+                        {{-- Tombol CTA Pendaftaran (Tanpa Absensi) --}}
+                        <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-3 pt-1">
+                            <a href="https://forms.gle/WVQMSKoZhEf4h4V28" target="_blank" rel="noopener noreferrer" class="btn-lime-accent text-decoration-none text-center d-inline-flex align-items-center justify-content-center gap-2">
+                                <i class="bi bi-pencil-square fs-5"></i>
+                                <span>Daftar Webinar Sekarang (Gratis)</span>
                             </a>
-                            <a href="{{ route('webinar.absensi') }}" class="btn btn-outline-light rounded-pill px-4 py-3 fw-bold text-center">
-                                <i class="bi bi-check2-circle me-2"></i>Isi Absensi Peserta
-                            </a>
+                            <span class="small text-white opacity-75 d-inline-flex align-items-center justify-content-center gap-1">
+                                <i class="bi bi-shield-check text-info"></i> Kuota Zoom Terbatas
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -888,7 +920,7 @@
             {{-- Viewport Slider --}}
             <div class="ski-carousel-viewport" id="skiCarouselViewport">
                 <div class="ski-carousel-track" id="skiCarouselTrack">
-                    @foreach($pelatihanUnggulan as $slug => $data)
+                    @foreach($pelatihanUnggulan as $slug =>$data)
                     <div class="ski-carousel-slide">
                         <div class="edtech-card">
                             <div class="edtech-thumb-wrap">
