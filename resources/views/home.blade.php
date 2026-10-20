@@ -752,7 +752,7 @@
                 <div class="row align-items-center g-4 g-lg-5">
                     <div class="col-lg-4">
                         <div class="ceo-photo-card">
-                            <img src="{{ asset('images/PakDimas.png') }}" alt="Nct Dimas Julian Zahid A">
+                            <img src="{{ asset('images/dhimas.png') }}" alt="Nct Dimas Julian Zahid A">
                             <div class="ceo-floating-badge">
                                 <div class="rounded-circle bg-warning text-dark d-flex align-items-center justify-content-center flex-shrink-0" style="width: 36px; height: 36px;">
                                     <i class="bi bi-award-fill"></i>
@@ -782,7 +782,7 @@
 
                         <div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-2 pt-2">
                             <div>
-                                <h5 class="fw-bold text-dark mb-1">Nct Dimas Julian Zahid A</h5>
+                                <h5 class="fw-bold text-dark mb-1">Dr. Nct Dimas Julian Zahid A</h5>
                                 <div class="text-muted small">AMK, S.Kep, MKM, CPRM, CWCCA, Grad. IOSH</div>
                             </div>
                             <div class="align-self-start align-self-sm-center">
