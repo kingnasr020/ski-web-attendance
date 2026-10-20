@@ -79,128 +79,215 @@
         border-color: #bfdbfe;
     }
 
-    /* 3. STRUKTUR ORGANISASI */
+    /* 3. STRUKTUR ORGANISASI HIERARKI */
     .org-section {
-        background: #f8fafc;
+        background: 
+            radial-gradient(circle at 10% 15%, rgba(56, 189, 248, 0.12) 0%, transparent 40%),
+            radial-gradient(circle at 90% 85%, rgba(0, 102, 204, 0.1) 0%, transparent 40%),
+            #f8fafc;
         border-top: 1px solid #e2e8f0;
         border-bottom: 1px solid #e2e8f0;
     }
 
-    .leader-card {
+    .org-card {
         background: #ffffff;
-        border: 1px solid #e2e8f0;
-        border-radius: 28px;
-        padding: 1.75rem;
+        border: 1.5px solid #e2e8f0;
+        border-radius: 26px;
+        padding: 1.6rem 1.35rem;
         text-align: center;
         height: 100%;
         position: relative;
-        transition: all 0.3s ease;
-        box-shadow: 0 8px 25px rgba(15, 23, 42, 0.04);
+        transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.04);
     }
 
-    .leader-card:hover {
-        border-color: #93c5fd;
+    .org-card:hover {
+        border-color: #38bdf8;
         transform: translateY(-6px);
-        box-shadow: 0 18px 35px rgba(0, 102, 204, 0.1);
+        box-shadow: 0 20px 38px rgba(0, 102, 204, 0.12);
     }
 
-    .leader-avatar-wrap {
-        width: 155px;
-        height: 155px;
-        margin: 0 auto 1.25rem;
+    .org-card-featured {
+        background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
+        border: 2px solid #93c5fd;
+    }
+
+    .org-avatar-wrap {
+        width: 138px;
+        height: 138px;
+        margin: 0 auto 1.1rem;
         border-radius: 50%;
-        padding: 5px;
+        padding: 4px;
         background: linear-gradient(135deg, #0066cc 0%, #38bdf8 100%);
-        box-shadow: 0 10px 25px rgba(0, 102, 204, 0.2);
+        box-shadow: 0 10px 24px rgba(0, 102, 204, 0.18);
     }
 
-    .leader-avatar-wrap img {
+    .org-avatar-wrap img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         object-position: top center;
         border-radius: 50%;
-        border: 4px solid #ffffff;
-        background: #ffffff;
+        border: 3.5px solid #ffffff;
+        background: #e0f2fe;
     }
 
-    .org-connector-line {
-        width: 2px;
-        height: 36px;
-        background: #cbd5e1;
+    .org-role-badge {
+        display: inline-block;
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding: 0.38rem 0.95rem;
+        border-radius: 999px;
+        margin-bottom: 0.65rem;
+    }
+
+    .org-name {
+        font-size: 1.08rem;
+        font-weight: 800;
+        color: #0a192f;
+        margin-bottom: 0.25rem;
+        line-height: 1.35;
+    }
+
+    .org-sub {
+        font-size: 0.82rem;
+        color: #64748b;
+        margin-bottom: 0;
+        line-height: 1.5;
+    }
+
+    .org-v-line {
+        width: 3px;
+        height: 34px;
+        background: linear-gradient(180deg, #0066cc 0%, #38bdf8 100%);
         margin: 0 auto;
+        border-radius: 99px;
     }
 
-    .division-pill-card {
-        background: #ffffff;
-        border: 1px solid #e2e8f0;
-        border-radius: 20px;
-        padding: 1.25rem;
-        height: 100%;
-        transition: all 0.25s ease;
+    .org-branch-bar {
+        max-width: 460px;
+        height: 3px;
+        background: #93c5fd;
+        margin: 0 auto;
+        position: relative;
     }
 
-    .division-pill-card:hover {
-        border-color: #0066cc;
-        transform: translateY(-3px);
-        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+    .org-branch-bar::before,
+    .org-branch-bar::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 3px;
+        height: 22px;
+        background: #93c5fd;
     }
 
-    /* 4. GALERI KEGIATAN KELAS (AUTO-SLIDE & BENTO) */
+    .org-branch-bar::before { left: 0; }
+    .org-branch-bar::after { right: 0; }
+
+    /* 4. GALERI KEGIATAN KELAS (22 FOTO ASLI A-V TERACAK) */
     .gallery-track-wrap {
         overflow: hidden;
         position: relative;
-        padding: 0.5rem 0;
+        padding: 0.65rem 0;
     }
 
-    .gallery-track {
+    .gallery-track-left {
         display: flex;
         gap: 1.25rem;
         width: max-content;
-        animation: scrollGallery 32s linear infinite;
+        animation: scrollGalleryLeft 52s linear infinite;
     }
 
-    .gallery-track-wrap:hover .gallery-track {
+    .gallery-track-right {
+        display: flex;
+        gap: 1.25rem;
+        width: max-content;
+        animation: scrollGalleryRight 56s linear infinite;
+    }
+
+    .gallery-track-wrap:hover .gallery-track-left,
+    .gallery-track-wrap:hover .gallery-track-right {
         animation-play-state: paused;
     }
 
-    @keyframes scrollGallery {
+    @keyframes scrollGalleryLeft {
         0% { transform: translateX(0); }
         100% { transform: translateX(-50%); }
     }
 
+    @keyframes scrollGalleryRight {
+        0% { transform: translateX(-50%); }
+        100% { transform: translateX(0); }
+    }
+
     .gallery-card {
-        width: 330px;
-        height: 230px;
+        width: 285px;
+        height: 350px;
         border-radius: 22px;
         overflow: hidden;
         position: relative;
         flex-shrink: 0;
-        border: 1px solid #e2e8f0;
+        border: 1.5px solid #e2e8f0;
         background: #0a192f;
-        box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .gallery-card:hover {
+        transform: translateY(-6px);
+        border-color: #38bdf8;
+        box-shadow: 0 18px 36px rgba(0, 102, 204, 0.16);
     }
 
     .gallery-card img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.45s ease;
+        object-position: center top;
+        transition: transform 0.5s ease;
     }
 
     .gallery-card:hover img {
-        transform: scale(1.07);
+        transform: scale(1.05);
     }
 
     .gallery-overlay {
         position: absolute;
         inset: 0;
-        background: linear-gradient(180deg, rgba(10, 25, 47, 0.05) 25%, rgba(10, 25, 47, 0.9) 100%);
+        background: linear-gradient(180deg, rgba(10, 25, 47, 0.0) 45%, rgba(10, 25, 47, 0.94) 100%);
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         padding: 1.15rem;
         color: #ffffff;
+    }
+
+    .gallery-zoom-btn {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.9);
+        color: #0a192f;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        opacity: 0;
+        transform: scale(0.85);
+        transition: all 0.25s ease;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .gallery-card:hover .gallery-zoom-btn {
+        opacity: 1;
+        transform: scale(1);
     }
 
     /* 5. LOKASI 3 CABANG (JOGJA, SURABAYA, TASIK) */
@@ -341,185 +428,335 @@
             <div class="text-center mb-5">
                 <span class="ski-pill-badge mb-2">
                     <i class="bi bi-diagram-3-fill text-primary"></i>
-                    <span>EXECUTIVE LEADERSHIP & ORGANIZATION</span>
+                    <span>STRUKTUR ORGANISASI • PT SKI INDONESIA</span>
                 </span>
-                <h2 class="fw-bold mt-1" style="font-size: clamp(1.75rem, 3vw, 2.5rem); color: #0a192f;">
-                    Struktur Organisasi <span class="font-serif-italic text-primary" style="font-size: 1.1em;">PT SKI Indonesia</span>
+                <h2 class="fw-bold mt-1" style="font-size: clamp(1.85rem, 3.2vw, 2.6rem); color: #0a192f;">
+                    Struktur Organisasi <span class="font-serif-italic text-primary" style="font-size: 1.1em;">PT Sertifikasi Kompetensi Indonesia</span>
                 </h2>
                 <p class="text-secondary small col-lg-6 mx-auto mb-0">
-                    Dipimpin oleh praktisi berpengalaman di bidang Keselamatan dan Kesehatan Kerja (K3), manajemen risiko, serta pengembangan kompetensi SDM.
+                    Sinergi dewan penasihat, jajaran direksi, dan manajemen operasional dalam menghadirkan layanan sertifikasi kompetensi terbaik.
                 </p>
             </div>
 
-            {{-- Top Level: Dewan Direksi --}}
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-6 col-lg-5">
-                    <div class="leader-card">
-                        <div class="leader-avatar-wrap">
-                            <img src="{{ asset('images/Pak Dimas.jpeg') }}" 
-                                 onerror="this.onerror=null;this.src='{{ asset('images/PakDimas.png') }}';" 
-                                 alt="Dimas Julian Zahid A">
-                        </div>
-                        <span class="badge rounded-pill px-3 py-2 fw-bold mb-2" style="background: #0a192f; color: #d9f99d;">
-                            PRESIDEN DIREKTUR
-                        </span>
-                        <h5 class="fw-bold mb-1" style="color: #0a192f;">Dimas Julian Zahid A</h5>
-                        <p class="small text-primary fw-semibold mb-2">AMK, S.Kep, MKM, CPRM, CWCCA, Grad. IOSH</p>
-                        <p class="small text-secondary mb-0">
-                            Bertanggung jawab atas arah kebijakan strategis, kemitraan nasional, dan penjaminan mutu sertifikasi PT SKI Indonesia.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-5">
-                    <div class="leader-card">
-                        <div class="leader-avatar-wrap">
-                            <img src="{{ asset('images/Pak Iqbal.jpeg') }}" 
+            {{-- LEVEL 1: ADVISOR & PRESIDENT DIRECTOR --}}
+            <div class="row g-4 justify-content-center align-items-stretch">
+                {{-- Advisor --}}
+                <div class="col-md-6 col-lg-4">
+                    <div class="org-card">
+                        <div class="org-avatar-wrap">
+                            <img src="{{ asset('images/rustika.png') }}" 
                                  onerror="this.onerror=null;this.src='{{ asset('images/logo.png') }}';" 
-                                 alt="Iqbal Subekti">
+                                 alt="Prof. Dr. Rustika SKM, M.Si">
                         </div>
-                        <span class="badge bg-primary rounded-pill px-3 py-2 fw-bold mb-2">
-                            DIREKTUR OPERASIONAL
+                        <span class="org-role-badge" style="background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd;">
+                            Advisor
                         </span>
-                        <h5 class="fw-bold mb-1" style="color: #0a192f;">Iqbal Subekti</h5>
-                        <p class="small text-primary fw-semibold mb-2">S.K.M., MKM</p>
-                        <p class="small text-secondary mb-0">
-                            Memimpin pelaksanaan operasional pelatihan, koordinasi Tempat Uji Kompetensi (TUK), serta kurikulum instruktur & asesor.
-                        </p>
+                        <h5 class="org-name">Prof. Dr. Rustika SKM, M.Si</h5>
+                        <p class="org-sub">Dewan Penasihat & Pakar Kehormatan PT SKI Indonesia</p>
+                    </div>
+                </div>
+
+                {{-- President Director --}}
+                <div class="col-md-6 col-lg-4">
+                    <div class="org-card org-card-featured">
+                        <div class="org-avatar-wrap">
+                            <img src="{{ asset('images/dhimas.png') }}" 
+                                 onerror="this.onerror=null;this.src='{{ asset('images/PakDimas.png') }}';" 
+                                 alt="Dr(c) Nct. Dimas J. Zahid A., M.K.M.">
+                        </div>
+                        <span class="org-role-badge" style="background: #0a192f; color: #d9f99d;">
+                            President Director
+                        </span>
+                        <h5 class="org-name">Dr(c) Nct. Dimas J. Zahid A., M.K.M.</h5>
+                        <p class="org-sub">AMK, S.Kep, MKM, CPRM, CWCCA, Grad. IOSH</p>
                     </div>
                 </div>
             </div>
 
-            {{-- Garis Konektor Hierarki --}}
-            <div class="org-connector-line d-none d-md-block"></div>
+            {{-- Garis Konektor ke Level 2 --}}
+            <div class="org-v-line d-none d-md-block"></div>
 
-            {{-- Second Level: Divisi Fungsional --}}
-            <div class="row g-3 mt-1 justify-content-center">
-                <div class="col-sm-6 col-lg-3">
-                    <div class="division-pill-card text-center">
-                        <div class="rounded-circle bg-primary bg-opacity-10 text-primary d-inline-flex align-items-center justify-content-center mb-3" style="width: 48px; height: 48px;">
-                            <i class="bi bi-mortarboard-fill fs-5"></i>
+            {{-- LEVEL 2: DIREKTUR UTAMA (PAK IQBAL) --}}
+            <div class="row g-4 justify-content-center mt-1 mt-md-0">
+                <div class="col-md-6 col-lg-4">
+                    <div class="org-card org-card-featured">
+                        <div class="org-avatar-wrap">
+                            <img src="{{ asset('images/iqbal.png') }}" 
+                                 onerror="this.onerror=null;this.src='{{ asset('images/Pak Iqbal.jpeg') }}';" 
+                                 alt="Dr(c) Iqbal Subekti, S.K.M, M.K.M.">
                         </div>
-                        <h6 class="fw-bold mb-1" style="color: #0a192f;">Divisi Akademik & TUK</h6>
-                        <p class="text-secondary small mb-0">Manajemen Kurikulum SKKNI, Asesor & Pelaksanaan Ujian BNSP/Kemnaker</p>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-lg-3">
-                    <div class="division-pill-card text-center">
-                        <div class="rounded-circle bg-info bg-opacity-10 text-primary d-inline-flex align-items-center justify-content-center mb-3" style="width: 48px; height: 48px;">
-                            <i class="bi bi-people-fill fs-5"></i>
-                        </div>
-                        <h6 class="fw-bold mb-1" style="color: #0a192f;">Layanan Peserta & Sertifikasi</h6>
-                        <p class="text-secondary small mb-0">Pendampingan Pemberkasan Peserta, Administrasi & Distribusi Sertifikat</p>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-lg-3">
-                    <div class="division-pill-card text-center">
-                        <div class="rounded-circle bg-warning bg-opacity-10 text-warning d-inline-flex align-items-center justify-content-center mb-3" style="width: 48px; height: 48px;">
-                            <i class="bi bi-briefcase-fill fs-5"></i>
-                        </div>
-                        <h6 class="fw-bold mb-1" style="color: #0a192f;">Kemitraan & In-House</h6>
-                        <p class="text-secondary small mb-0">Kerja Sama Pelatihan Korporasi, Instansi & Hubungan Antar Lembaga</p>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-lg-3">
-                    <div class="division-pill-card text-center">
-                        <div class="rounded-circle bg-success bg-opacity-10 text-success d-inline-flex align-items-center justify-content-center mb-3" style="width: 48px; height: 48px;">
-                            <i class="bi bi-laptop-fill fs-5"></i>
-                        </div>
-                        <h6 class="fw-bold mb-1" style="color: #0a192f;">IT & Digital Media</h6>
-                        <p class="text-secondary small mb-0">Sistem Informasi Kehadiran, LMS Pembelajaran & Publikasi Digital</p>
+                        <span class="org-role-badge" style="background: #0066cc; color: #ffffff;">
+                            Direktur Utama
+                        </span>
+                        <h5 class="org-name">Dr(c) Iqbal Subekti, S.K.M, M.K.M.</h5>
+                        <p class="org-sub">Kepemimpinan Utama & Strategi Korporasi PT SKI Indonesia</p>
                     </div>
                 </div>
             </div>
+
+            {{-- Garis Konektor ke Level 3 --}}
+            <div class="org-v-line d-none d-md-block"></div>
+
+            {{-- LEVEL 3: DIREKTUR OPERASIONAL (PAK MUSTAKIM) --}}
+            <div class="row g-4 justify-content-center mt-1 mt-md-0">
+                <div class="col-md-6 col-lg-4">
+                    <div class="org-card">
+                        <div class="org-avatar-wrap">
+                            <img src="{{ asset('images/mustakim.png') }}" 
+                                 onerror="this.onerror=null;this.src='{{ asset('images/logo.png') }}';" 
+                                 alt="Dr. Mustakim, S.Pd., M.Pd.">
+                        </div>
+                        <span class="org-role-badge" style="background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0;">
+                            Direktur Operasional
+                        </span>
+                        <h5 class="org-name">Dr. Mustakim, S.Pd., M.Pd.</h5>
+                        <p class="org-sub">Manajemen Operasional Pelatihan & Regional (Gresik / Jawa Timur)</p>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Garis Konektor Bercabang ke Level 4 --}}
+            <div class="org-v-line d-none d-md-block"></div>
+            <div class="org-branch-bar d-none d-md-block mb-3"></div>
+
+            {{-- LEVEL 4: TIM MANAJEMEN & OPERASIONAL --}}
+            <div class="row g-4 justify-content-center mt-1 mt-md-0">
+                {{-- Nasarudin --}}
+                <div class="col-md-6 col-lg-4">
+                    <div class="org-card">
+                        <div class="org-avatar-wrap">
+                            <img src="{{ asset('images/nasar.png') }}" 
+                                 onerror="this.onerror=null;this.src='{{ asset('images/logo.png') }}';" 
+                                 alt="Nasarudin">
+                        </div>
+                        <span class="org-role-badge" style="background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe;">
+                            Manager of WEB & Social Media Operations
+                        </span>
+                        <h5 class="org-name">Nasarudin</h5>
+                        <p class="org-sub">Pengembangan Web, Infrastruktur Digital & Publikasi Media Sosial</p>
+                    </div>
+                </div>
+
+                {{-- Rosa Rohimah --}}
+                <div class="col-md-6 col-lg-4">
+                    <div class="org-card">
+                        <div class="org-avatar-wrap">
+                            <img src="{{ asset('images/rosa.png') }}" 
+                                 onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Rosa+Rohimah&background=0066cc&color=fff&size=256&bold=true';" 
+                                 alt="Rosa Rohimah">
+                        </div>
+                        <span class="org-role-badge" style="background: #fef3c7; color: #b45309; border: 1px solid #fde68a;">
+                            Public Relations & Event Host
+                        </span>
+                        <h5 class="org-name">Rosa Rohimah</h5>
+                        <p class="org-sub">Hubungan Masyarakat, Komunikasi Kemitraan & Pemandu Acara Pelatihan</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    {{-- 4. GALERI KEGIATAN KELAS PELATIHAN SKI --}}
+    {{-- 4. GALERI KEGIATAN KELAS PELATIHAN SKI (22 FOTO ASLI A-V TERACAK) --}}
     <section class="py-5 bg-white">
         <div class="container">
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4 gap-3">
                 <div>
                     <span class="ski-pill-badge mb-2">
                         <i class="bi bi-camera-fill text-primary"></i>
-                        <span>TRAINING CLASS ACTIVITIES</span>
+                        <span>REAL CLASS DOCUMENTATION • 22 ACTIVITIES</span>
                     </span>
                     <h2 class="fw-bold mb-0 mt-1" style="font-size: clamp(1.75rem, 3vw, 2.4rem); color: #0a192f;">
                         Dokumentasi Kegiatan <span class="font-serif-italic text-primary" style="font-size: 1.1em;">Kelas Pelatihan SKI</span>
                     </h2>
                 </div>
                 <p class="text-secondary small mb-0 col-md-5 text-md-end">
-                    Suasana pembekalan materi, praktik lapangan, dan asesmen uji kompetensi bersama peserta dari berbagai sektor industri.
+                    Dokumentasi asli kegiatan pelatihan tatap muka, kelas online Zoom, hingga pengujian kompetensi resmi bersama PT SKI Indonesia. <span class="text-primary fw-bold">(Klik foto untuk memperbesar)</span>
                 </p>
             </div>
         </div>
 
         @php
-            $galeriKegiatan = [
+            // BARIS 1: 11 Foto (Urutan disilang agar tidak ada kegiatan serupa yang bersebelahan)
+            $galeriBaris1 = [
                 [
-                    'img' => asset('images/foto skema/k3umum.png'),
-                    'fallback' => 'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800',
-                    'tag' => 'KELAS PEMBINAAN',
-                    'title' => 'Pelatihan & Praktik Lapangan Ahli K3 Umum',
-                    'loc' => 'Yogyakarta & Online Zoom'
-                ],
-                [
-                    'img' => asset('Poster/2.png'),
-                    'fallback' => 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800',
-                    'tag' => 'AUDIT & ASESMEN',
-                    'title' => 'Studi Kasus & Simulasi Auditor SMK3',
-                    'loc' => 'Kelas Reguler & Korporasi'
-                ],
-                [
-                    'img' => asset('Poster/3.png'),
-                    'fallback' => 'https://images.pexels.com/photos/257700/pexels-photo-257700.jpeg?auto=compress&cs=tinysrgb&w=800',
-                    'tag' => 'SEKTOR MIGAS',
-                    'title' => 'Pembekalan Teknis Pengawas K3 Industri Migas',
+                    'img' => asset('images/kegiatan/a.jpeg'),
+                    'tag' => 'AHLI K3 UMUM & LISTRIK',
+                    'title' => 'Dokumentasi Class Ahli K3 Umum & K3 Kelistrikan',
                     'loc' => 'Sertifikasi Resmi BNSP'
                 ],
                 [
-                    'img' => asset('Poster/4.png'),
-                    'fallback' => 'https://images.pexels.com/photos/8961065/pexels-photo-8961065.jpeg?auto=compress&cs=tinysrgb&w=800',
-                    'tag' => 'PRAKTIK ALAT UJI',
-                    'title' => 'Simulasi Pengukuran Gas Berbahaya (Authorized Gas Tester)',
-                    'loc' => 'Praktik Langsung Instruktur'
+                    'img' => asset('images/kegiatan/p.jpeg'),
+                    'tag' => 'K3 KONSTRUKSI',
+                    'title' => 'Dokumentasi Day 1 Pengawas K3 Konstruksi',
+                    'loc' => 'Pembekalan Materi & Diskusi'
                 ],
                 [
-                    'img' => asset('Poster/6.png'),
-                    'fallback' => 'https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=800',
-                    'tag' => 'KESELAMATAN KHUSUS',
-                    'title' => 'Prosedur Keselamatan Kerja Ruang Terbatas (Confined Space)',
-                    'loc' => 'Uji Kompetensi TUK SKI'
+                    'img' => asset('images/kegiatan/g.jpeg'),
+                    'tag' => 'TRAINING OF TRAINER',
+                    'title' => 'Pelatihan Training of Trainer (ToT) Sertifikasi BNSP',
+                    'loc' => 'Kelas Interaktif Online'
                 ],
                 [
-                    'img' => asset('Poster/7.png'),
-                    'fallback' => 'https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=800',
-                    'tag' => 'KONSTRUKSI & TEKNIS',
-                    'title' => 'Inspeksi & Keselamatan Pengawas Perancah (Scaffolding)',
+                    'img' => asset('images/kegiatan/t.jpeg'),
+                    'tag' => 'KELAS FIREMAN',
+                    'title' => 'Dokumentasi Class Fireman (Pemadam Kebakaran)',
+                    'loc' => 'Praktik & Pembekalan Teknis'
+                ],
+                [
+                    'img' => asset('images/kegiatan/c.jpeg'),
+                    'tag' => 'KEMITRAAN INSTANSI',
+                    'title' => 'Dokumentasi Bersama Dinas Pendidikan Jombang',
+                    'loc' => 'Kolaborasi & Pengembangan SDM'
+                ],
+                [
+                    'img' => asset('images/kegiatan/k.jpeg'),
+                    'tag' => 'PERTAMBANGAN (POM)',
+                    'title' => 'Zoom Meet Training Day 1 Pengawas Operasional Madya',
                     'loc' => 'Sertifikasi Kompetensi BNSP'
+                ],
+                [
+                    'img' => asset('images/kegiatan/e.jpeg'),
+                    'tag' => 'TKPK LEVEL 2',
+                    'title' => 'Dokumentasi Pelatihan Tenaga Kerja Pada Ketinggian Level 2',
+                    'loc' => 'Kelas Reguler & Praktik'
+                ],
+                [
+                    'img' => asset('images/kegiatan/q.jpeg'),
+                    'tag' => 'ASESMEN KOMPETENSI',
+                    'title' => 'Dokumentasi Pengujian & Uji Kompetensi Day 3',
+                    'loc' => 'TUK Mandiri PT SKI'
+                ],
+                [
+                    'img' => asset('images/kegiatan/u.jpeg'),
+                    'tag' => 'KELAS TATAP MUKA',
+                    'title' => 'Dokumentasi Pelatihan Tatap Muka Day 1',
+                    'loc' => 'Yogyakarta & Cabang Regional'
+                ],
+                [
+                    'img' => asset('images/kegiatan/i.jpeg'),
+                    'tag' => 'PERTAMBANGAN (POM)',
+                    'title' => 'Class Training Day 2 Pengawas Operasional Madya',
+                    'loc' => 'Pemaparan Kurikulum SKKNI'
+                ],
+                [
+                    'img' => asset('images/kegiatan/n.jpeg'),
+                    'tag' => 'K3 KONSTRUKSI',
+                    'title' => 'Dokumentasi Day 3 Pengawas K3 Konstruksi',
+                    'loc' => 'Evaluasi & Studi Kasus'
+                ],
+            ];
+
+            // BARIS 2: 11 Foto Lainnya (Urutan disilang agar variatif & tidak berdempetan)
+            $galeriBaris2 = [
+                [
+                    'img' => asset('images/kegiatan/d.jpeg'),
+                    'tag' => 'TKPK LEVEL 2',
+                    'title' => 'Dokumentasi Day 2 Tenaga Kerja Pada Ketinggian Level 2',
+                    'loc' => 'Simulasi & Asesmen Teknis'
+                ],
+                [
+                    'img' => asset('images/kegiatan/r.jpeg'),
+                    'tag' => 'KELAS FIREMAN',
+                    'title' => 'Dokumentasi Day 2 Pelatihan Fireman & Keselamatan Kebakaran',
+                    'loc' => 'Sertifikasi Kompetensi BNSP'
+                ],
+                [
+                    'img' => asset('images/kegiatan/l.jpeg'),
+                    'tag' => 'TRAINING AHLI K3',
+                    'title' => 'Training Ahli K3 Umum Day 2 bersama Instruktur',
+                    'loc' => 'Sesi Daring & Tatap Muka'
+                ],
+                [
+                    'img' => asset('images/kegiatan/o.jpeg'),
+                    'tag' => 'K3 KONSTRUKSI',
+                    'title' => 'Dokumentasi Day 2 Pengawas K3 Konstruksi',
+                    'loc' => 'Pendalaman Regulasi K3'
+                ],
+                [
+                    'img' => asset('images/kegiatan/h.jpeg'),
+                    'tag' => 'RECAP CLASS',
+                    'title' => 'Recap Class Pelatihan & Sertifikasi Kompetensi SKI',
+                    'loc' => 'Dokumentasi Kegiatan Kelas'
+                ],
+                [
+                    'img' => asset('images/kegiatan/v.jpeg'),
+                    'tag' => 'FASILITAS PESERTA',
+                    'title' => 'Dokumentasi Coffee Break & Makan Siang Peserta',
+                    'loc' => 'Layanan Prima Kelas Tatap Muka'
+                ],
+                [
+                    'img' => asset('images/kegiatan/b.jpeg'),
+                    'tag' => 'AHLI K3 UMUM & LISTRIK',
+                    'title' => 'Dokumentasi Class Day 2 Ahli K3 Umum & Kelistrikan',
+                    'loc' => 'Sertifikasi Resmi BNSP'
+                ],
+                [
+                    'img' => asset('images/kegiatan/j.jpeg'),
+                    'tag' => 'PERTAMBANGAN (POM)',
+                    'title' => 'Class Training Day 1 Pengawas Operasional Madya',
+                    'loc' => 'Pembekalan Teknis Pertambangan'
+                ],
+                [
+                    'img' => asset('images/kegiatan/s.jpeg'),
+                    'tag' => 'FASILITAS KELAS',
+                    'title' => 'Suasana Coffee Break & Ramah Tamah Kelas Fireman',
+                    'loc' => 'Kenyamanan Peserta Pelatihan'
+                ],
+                [
+                    'img' => asset('images/kegiatan/f.jpeg'),
+                    'tag' => 'TKPK LEVEL 2',
+                    'title' => 'Sesi Online Pelatihan TKPK Level 2 Sertifikasi BNSP',
+                    'loc' => 'Pembelajaran Interaktif'
+                ],
+                [
+                    'img' => asset('images/kegiatan/m.jpeg'),
+                    'tag' => 'K3 KONSTRUKSI',
+                    'title' => 'Sesi Presentasi & Diskusi Pengawas K3 Konstruksi',
+                    'loc' => 'Uji Kompetensi TUK SKI'
                 ],
             ];
         @endphp
 
-        {{-- Auto-Sliding Marquee Dokumentasi --}}
-        <div class="gallery-track-wrap">
-            <div class="gallery-track">
-                @foreach(array_merge($galeriKegiatan, $galeriKegiatan) as $item)
-                <div class="gallery-card">
-                    <img src="{{ $item['img'] }}" 
-                         alt="{{ $item['title'] }}" 
-                         loading="lazy"
-                         onerror="this.onerror=null;this.src='{{ $item['fallback'] }}';">
+        {{-- Marquee Baris 1 (Gerak ke Kiri) --}}
+        <div class="gallery-track-wrap mb-3">
+            <div class="gallery-track-left">
+                @foreach(array_merge($galeriBaris1, $galeriBaris1) as $item)
+                <div class="gallery-card" onclick="openSkiGalleryModal('{{ $item['img'] }}', '{{ $item['title'] }}', '{{ $item['tag'] }}')">
+                    <img src="{{ $item['img'] }}" alt="{{ $item['title'] }}" loading="lazy">
+                    <div class="gallery-zoom-btn">
+                        <i class="bi bi-arrows-angle-expand"></i>
+                    </div>
                     <div class="gallery-overlay">
-                        <span class="badge rounded-pill align-self-start mb-2" style="background: rgba(56, 189, 248, 0.95); color: #0a192f; font-size: 0.68rem; font-weight: 800;">
+                        <span class="badge rounded-pill align-self-start mb-2" style="background: rgba(56, 189, 248, 0.95); color: #0a192f; font-size: 0.66rem; font-weight: 800;">
                             {{ $item['tag'] }}
                         </span>
-                        <h6 class="fw-bold text-white mb-1" style="font-size: 0.95rem; line-height: 1.35;">{{ $item['title'] }}</h6>
-                        <div class="small text-white opacity-75" style="font-size: 0.76rem;">
-                            <i class="bi bi-geo-alt-fill text-info me-1"></i>{{ $item['loc'] }}
+                        <h6 class="fw-bold text-white mb-1" style="font-size: 0.92rem; line-height: 1.35;">{{ $item['title'] }}</h6>
+                        <div class="small text-white opacity-75" style="font-size: 0.74rem;">
+                            <i class="bi bi-check2-circle text-info me-1"></i>{{ $item['loc'] }}
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+
+        {{-- Marquee Baris 2 (Gerak ke Kanan) --}}
+        <div class="gallery-track-wrap">
+            <div class="gallery-track-right">
+                @foreach(array_merge($galeriBaris2, $galeriBaris2) as $item)
+                <div class="gallery-card" onclick="openSkiGalleryModal('{{ $item['img'] }}', '{{ $item['title'] }}', '{{ $item['tag'] }}')">
+                    <img src="{{ $item['img'] }}" alt="{{ $item['title'] }}" loading="lazy">
+                    <div class="gallery-zoom-btn">
+                        <i class="bi bi-arrows-angle-expand"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="badge rounded-pill align-self-start mb-2" style="background: #d9f99d; color: #0a192f; font-size: 0.66rem; font-weight: 800;">
+                            {{ $item['tag'] }}
+                        </span>
+                        <h6 class="fw-bold text-white mb-1" style="font-size: 0.92rem; line-height: 1.35;">{{ $item['title'] }}</h6>
+                        <div class="small text-white opacity-75" style="font-size: 0.74rem;">
+                            <i class="bi bi-check2-circle text-info me-1"></i>{{ $item['loc'] }}
                         </div>
                     </div>
                 </div>
@@ -527,6 +764,24 @@
             </div>
         </div>
     </section>
+
+    {{-- MODAL POPUP PREVIEW FOTO DOKUMENTASI --}}
+    <div class="modal fade" id="skiGalleryModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 rounded-4 overflow-hidden shadow-lg" style="background: #0a192f;">
+                <div class="modal-header border-0 pb-0">
+                    <div>
+                        <span id="skiModalTag" class="badge rounded-pill px-3 py-1 fw-bold mb-1" style="background: #38bdf8; color: #0a192f; font-size: 0.72rem;"></span>
+                        <h6 id="skiModalTitle" class="modal-title fw-bold text-white mb-0"></h6>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center p-3">
+                    <img id="skiModalImg" src="" alt="Preview Dokumentasi" class="img-fluid rounded-3" style="max-height: 78vh; object-fit: contain;">
+                </div>
+            </div>
+        </div>
+    </div>
 
     {{-- 5. JARINGAN LOKASI KANTOR (YOGYAKARTA, SURABAYA, TASIKMALAYA) --}}
     <section class="py-5" style="background: #f8fafc;">
@@ -624,4 +879,15 @@
     </section>
 
 </div>
+
+<script>
+    function openSkiGalleryModal(imgSrc, title, tag) {
+        const modalEl = document.getElementById('skiGalleryModal');
+        document.getElementById('skiModalImg').src = imgSrc;
+        document.getElementById('skiModalTitle').textContent = title;
+        document.getElementById('skiModalTag').textContent = tag;
+        const modal = new bootstrap.Modal(modalEl);
+        modal.show();
+    }
+</script>
 @endsection
