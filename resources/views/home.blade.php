@@ -648,7 +648,7 @@
                                     <i class="bi bi-layers-fill fs-4 text-white opacity-75"></i>
                                 </div>
                                 <div class="mt-3">
-                                    <div class="display-5 fw-extrabold mb-0" style="font-weight: 800;">25+</div>
+                                    <div class="display-5 fw-extrabold mb-0" style="font-weight: 800;">94+</div>
                                     <div class="small text-white opacity-90">Program Sertifikasi BNSP</div>
                                 </div>
                             </div>
@@ -967,7 +967,7 @@
             {{-- Tombol View 25 Skema Tetap Ada di Bawah --}}
             <div class="text-center mt-4 pt-2">
                 <a href="{{ route('pelatihan.index') }}" class="ski-btn-primary text-decoration-none d-inline-flex align-items-center gap-2">
-                    <span>LIHAT SEMUA 25 SKEMA SERTIFIKASI</span>
+                    <span>LIHAT SEMUA 94+ SKEMA SERTIFIKASI</span>
                     <i class="bi bi-arrow-right"></i>
                 </a>
             </div>

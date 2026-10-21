@@ -410,3 +410,7 @@
 #57 D:\\Downloads\\app\\index.php(28): Illuminate\\Foundation\\Application->handleRequest(Object(Illuminate\\Http\\Request))
 #58 {main}
 "} 
+[2026-10-21 07:46:13] local.ERROR: Allowed memory size of 134217728 bytes exhausted (tried to allocate 93666616 bytes) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Allowed memory size of 134217728 bytes exhausted (tried to allocate 93666616 bytes) at D:\\Downloads\\app\\storage\\framework\\views\\f35c9f94fec2b831ccfaae46318287b2.php:29)
+[stacktrace]
+#0 {main}
+"} 
