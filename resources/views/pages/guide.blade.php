@@ -180,7 +180,7 @@
                     </div>
                     <h5 class="fw-bold text-dark mb-2">Pilih Skema</h5>
                     <p class="small text-secondary mb-0" style="line-height: 1.65;">
-                        Telusuri 25+ skema sertifikasi resmi BNSP atau Kemnaker RI di menu <strong>Pelatihan</strong> yang sesuai dengan bidang kerja Anda.
+                        Telusuri 94+ skema sertifikasi resmi BNSP atau Kemnaker RI di menu <strong>Pelatihan</strong> yang sesuai dengan bidang kerja Anda.
                     </p>
                 </div>
             </div>

@@ -364,7 +364,7 @@
                         <div class="row g-3 pt-3 border-top">
                             <div class="col-sm-4">
                                 <div class="p-3 rounded-4 bg-light text-center">
-                                    <div class="h3 fw-extrabold text-primary mb-0" style="font-weight: 800;">25+</div>
+                                    <div class="h3 fw-extrabold text-primary mb-0" style="font-weight: 800;">94+</div>
                                     <div class="small text-secondary fw-semibold">Skema Sertifikasi</div>
                                 </div>
                             </div>
